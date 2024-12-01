@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 1rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  [data-lk-theme="default"] {
+    .lk-button,
+    .lk-disconnect-button {
+      @apply inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .lk-device-menu {
+      @apply absolute top-0 left-0 z-10 rounded-lg border bg-background p-2;
+    }
+
+    .lk-focus-toggle-button {
+      @apply absolute top-2 right-2 z-10 bg-background/90 w-8 h-8 rounded-sm;
+    }
+
+    .lk-participant-metadata {
+      @apply right-2 bottom-2 left-2;
+    }
+
+    .lk-participant-metadata-item {
+      @apply bg-background/90 rounded-sm p-2 h-8 min-w-8;
+    }
+
+    --lk-button-bg: hsl(var(--background));
+    --lk-button-fg: hsl(var(--foreground));
+    --lk-button-border: hsl(var(--border));
+    --lk-button-border-width: 1px;
+    --lk-button-hover-bg: hsl(var(--accent));
+    --lk-button-hover-fg: hsl(var(--accent-foreground));
+    --lk-button-active-bg: hsl(var(--accent));
+    --lk-button-active-fg: hsl(var(--accent-foreground));
+    --lk-button-radius: var(--radius);
+
+    --lk-disconnect-button-bg: hsl(var(--background));
+    --lk-disconnect-button-fg: hsl(var(--foreground));
+    --lk-disconnect-button-border: hsl(var(--border));
+    --lk-disconnect-button-border-width: 0px;
+    --lk-disconnect-button-hover-bg: hsl(var(--destructive));
+    --lk-disconnect-button-hover-fg: hsl(var(--destructive-foreground));
+
+    --lk-fg: hsl(var(--foreground));
+    --lk-fg-secondary: hsl(var(--muted-foreground));
+    --lk-fg-tertiary: hsl(var(--muted-foreground));
+
+    --lk-bg: hsl(var(--background));
+    --lk-bg-secondary: hsl(var(--secondary));
+    --lk-bg-tertiary: hsl(var(--muted));
+
+    --lk-accent-fg: hsl(var(--accent-foreground));
+    --lk-accent-bg: hsl(var(--accent));
+
+    --lk-danger-fg: hsl(var(--destructive-foreground));
+    --lk-danger: hsl(var(--destructive));
+    --lk-danger-text: hsl(var(--destructive));
+    --lk-danger-bg: hsl(var(--destructive) / 0.2);
+
+    --lk-success-fg: hsl(142.1 76.2% 36.3%);
+    --lk-success: hsl(143.8 61.2% 52.4%);
+    --lk-success-text: hsl(140.6 84.2% 22.5%);
+    --lk-success-bg: hsl(141.7 78.9% 85.3%);
+
+    --lk-control-fg: hsl(var(--foreground));
+    --lk-control-bg: hsl(var(--secondary));
+
+    --lk-connection-excellent: var(--lk-success);
+    --lk-connection-good: hsl(37 92% 55%);
+    --lk-connection-poor: var(--lk-danger);
+
+    --lk-border-radius: var(--radius);
+  }
+
+  .dark [data-lk-theme="default"] {
+    .lk-button,
+    .lk-disconnect-button {
+      @apply hover:bg-accent/90;
+    }
+
+    .lk-disconnect-button:hover {
+      @apply hover:bg-destructive/90;
+    }
+
+    --lk-button-bg: hsl(var(--background));
+    --lk-button-fg: hsl(var(--foreground));
+    --lk-button-border: hsl(var(--border));
+    --lk-button-hover-bg: hsl(var(--accent));
+    --lk-button-hover-fg: hsl(var(--accent-foreground));
+    --lk-button-active-bg: hsl(var(--accent));
+    --lk-button-active-fg: hsl(var(--accent-foreground));
+
+    --lk-success-fg: hsl(142.1 70.6% 45.3%);
+    --lk-success: hsl(143.8 61.2% 42.4%);
+    --lk-success-text: hsl(140.6 84.2% 82.5%);
+    --lk-success-bg: hsl(141.7 78.9% 15.3%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
