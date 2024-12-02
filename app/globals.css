@@ -60,6 +60,13 @@
 
   [data-lk-theme="default"] {
     .lk-button,
+    .lk-disconnect-button,
+    .lk-participant-metadata-item,
+    .lk-device-menu {
+      @apply font-mono;
+    }
+
+    .lk-button,
     .lk-disconnect-button {
       @apply inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
     }
@@ -113,43 +120,10 @@
     --lk-danger-text: hsl(var(--destructive));
     --lk-danger-bg: hsl(var(--destructive) / 0.2);
 
-    --lk-success-fg: hsl(142.1 76.2% 36.3%);
-    --lk-success: hsl(143.8 61.2% 52.4%);
-    --lk-success-text: hsl(140.6 84.2% 22.5%);
-    --lk-success-bg: hsl(141.7 78.9% 85.3%);
-
     --lk-control-fg: hsl(var(--foreground));
     --lk-control-bg: hsl(var(--secondary));
 
-    --lk-connection-excellent: var(--lk-success);
-    --lk-connection-good: hsl(37 92% 55%);
-    --lk-connection-poor: var(--lk-danger);
-
     --lk-border-radius: var(--radius);
-  }
-
-  .dark [data-lk-theme="default"] {
-    .lk-button,
-    .lk-disconnect-button {
-      @apply hover:bg-accent/90;
-    }
-
-    .lk-disconnect-button:hover {
-      @apply hover:bg-destructive/90;
-    }
-
-    --lk-button-bg: hsl(var(--background));
-    --lk-button-fg: hsl(var(--foreground));
-    --lk-button-border: hsl(var(--border));
-    --lk-button-hover-bg: hsl(var(--accent));
-    --lk-button-hover-fg: hsl(var(--accent-foreground));
-    --lk-button-active-bg: hsl(var(--accent));
-    --lk-button-active-fg: hsl(var(--accent-foreground));
-
-    --lk-success-fg: hsl(142.1 70.6% 45.3%);
-    --lk-success: hsl(143.8 61.2% 42.4%);
-    --lk-success-text: hsl(140.6 84.2% 82.5%);
-    --lk-success-bg: hsl(141.7 78.9% 15.3%);
   }
 }
 
